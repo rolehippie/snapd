@@ -1,0 +1,6 @@
+# Standards: 1.2
+---
+# @var snapd_purge:description: Purge all snapd packages and dependencies
+snapd_purge: True
+
+...

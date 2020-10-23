@@ -1,0 +1,20 @@
+# Standards: 1.2
+---
+- name: Purge snapd package
+  when: snapd_purge
+  apt:
+    name: snapd
+    purge: True
+    state: absent
+  tags:
+    - snapd
+
+- name: Drop snap directory
+  when: snapd_purge
+  file:
+    path: /root/snap
+    state: absent
+  tags:
+    - snapd
+
+...
