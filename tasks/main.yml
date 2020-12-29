@@ -9,10 +9,13 @@
   tags:
     - snapd
 
-- name: Drop snap directory
+- name: Drop snap directories
   when: snapd_purge
+  loop:
+    - /snap
+    - /root/snap
   file:
-    path: /root/snap
+    path: "{{ item }}"
     state: absent
   tags:
     - snapd
