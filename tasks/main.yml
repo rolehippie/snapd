@@ -29,4 +29,18 @@
   tags:
     - snapd
 
+- name: Pin any version
+  copy:
+    content: |
+      Explantion: Pin added by snapd role
+      Package: snapd
+      Pin: release a=*
+      Pin-Priority: -10
+    dest: /etc/apt/preferences.d/snapd
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+  tags:
+    - snapd
+
 ...
