@@ -1,17 +1,16 @@
-# Standards: 1.2
 ---
 - name: Remove snap installs
   when: snapd_purge
   register: snap_uninstall
   changed_when: "'removed' in snap_uninstall.stdout"
-  shell:
+  ansible.builtin.shell:
     cmd: snap list | tail -n +2 | awk '{system("snap remove " $1 " --purge")}'
   tags:
     - snapd
 
 - name: Purge snapd package
   when: snapd_purge
-  apt:
+  ansible.builtin.apt:
     name: snapd
     purge: True
     state: absent
@@ -23,14 +22,14 @@
   loop:
     - /snap
     - /root/snap
-  file:
+  ansible.builtin.file:
     path: "{{ item }}"
     state: absent
   tags:
     - snapd
 
 - name: Pin any version
-  copy:
+  ansible.builtin.copy:
     content: |
       Explantion: Pin added by snapd role
       Package: snapd
