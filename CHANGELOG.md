@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.0](https://github.com/rolehippie/snapd/compare/v1.2.0...v2.0.0) (2024-02-12)
+
+
+### Features
+
+* drop support for ubuntu 18.04 ([cbd7d64](https://github.com/rolehippie/snapd/commit/cbd7d64a5c3d5078ba2e405e8cfbe0ee21673615))
+* used full qualified collection names ([a91a7a3](https://github.com/rolehippie/snapd/commit/a91a7a317cd508b41377fe993d46e3c2ac7b1710))
+
 ## [1.2.0](https://github.com/rolehippie/snapd/compare/v1.1.0...v1.2.0) (2023-04-24)
 
 
