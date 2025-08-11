@@ -1,4 +1,4 @@
-# snapd
+# workspace
 
 [![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/snapd)
 [![General Workflow](https://github.com/rolehippie/snapd/actions/workflows/general.yml/badge.svg)](https://github.com/rolehippie/snapd/actions/workflows/general.yml)
@@ -44,7 +44,6 @@ snapd_purge: true
 ## Discovered Tags
 
 **_snapd_**
-
 
 ## Dependencies
 
