@@ -1,24 +1,32 @@
 ---
 - name: Remove snap installs
-  when: snapd_purge
+  when:
+    - snapd_purge
   register: snap_uninstall
   changed_when: "'removed' in snap_uninstall.stdout"
-  ansible.builtin.shell:
-    cmd: snap list | tail -n +2 | awk '{system("snap remove " $1 " --purge")}'
+  ansible.builtin.shell: |
+    set -o pipefail
+    if which snap >/dev/null; then
+      snap list | tail -n +2 | awk '{system("snap remove " $1 " --purge")}'
+    fi
+  args:
+    executable: /bin/bash
   tags:
     - snapd
 
 - name: Purge snapd package
-  when: snapd_purge
+  when:
+    - snapd_purge
   ansible.builtin.apt:
     name: snapd
-    purge: True
+    purge: true
     state: absent
   tags:
     - snapd
 
 - name: Drop snap directories
-  when: snapd_purge
+  when:
+    - snapd_purge
   loop:
     - /snap
     - /root/snap
