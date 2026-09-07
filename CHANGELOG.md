@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.5.0](https://github.com/rolehippie/snapd/compare/v2.4.1...v2.5.0) (2026-09-07)
+
+### Features
+
+* add separate requirements for molecule run ([ae4e593](https://github.com/rolehippie/snapd/commit/ae4e59361018870ccc84d0c141bdb5d1387d4d91))
+
 ## [2.4.1](https://github.com/rolehippie/snapd/compare/v2.4.0...v2.4.1) (2026-08-31)
 
 ### Dependencies
